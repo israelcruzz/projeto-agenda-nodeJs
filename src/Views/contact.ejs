@@ -1,0 +1,53 @@
+<%- include('includes/head') %> 
+<%- include('includes/nav') %> 
+
+<div class="container">
+    <div class="row">
+        <% if(user) { %>
+        <div class="col-lg mt-5 text-center">
+            <h1>Cadastre Seu Contato</h1>
+            <p class="lead">Cadastre um contato seu.</p>
+        </div>
+        <div class="row flex justify-content-center">
+            <div class="col-lg">
+
+              <% if(contato._id) { %>
+                    <form action="/contato/edit/finish/<%= contato._id %>" method="post">
+              <% } else { %>
+                    <form action="/cadastrar/contato" method="post">
+              <% } %>
+                    <%- include('includes/messages') %>
+                  <div class="mb-3">
+                    <label>Nome</label>
+                    <input type="text" value="<%= contato.nome %>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nome">
+                  </div>
+                  <div class="mb-3">
+                    <label>Sobrenome</label>
+                    <input type="text" value="<%= contato.sobrenome %>" class="form-control" id="exampleInputPassword1" name="sobrenome">
+                  </div>
+                  <div class="mb-3">
+                    <label>Email</label>
+                    <input type="email" value="<%= contato.email %>" class="form-control" id="exampleInputPassword1" name="email">
+                  </div>
+                  <div class="mb-3">
+                    <label>Telefone</label>
+                    <input type="text" value="<%= contato.telefone %>" class="form-control" id="exampleInputPassword1" name="telefone">
+                  </div>
+                  <% if(contato._id) { %>
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                  <% } else { %>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                  <% } %>
+                </form>
+              </div>
+            <% } else { %> 
+                <div class="col-lg mt-5 text-center">
+                    <h1>Faça Login para Acessar</h1>
+                    <a href="/login/index">Login</a>
+                </div>
+            <% } %>  
+
+    </div>
+</div>
+
+<%- include('includes/footer') %> 
