@@ -12,7 +12,7 @@ Este é um projeto de agenda simples com operações CRUD (Create, Read, Update,
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/agenda-nodejs-mongodb.git
+   git clone https://github.com/israelcruzz/agenda-nodejs-mongodb.git
    ```
 
 2. Acesse o diretório do projeto:
